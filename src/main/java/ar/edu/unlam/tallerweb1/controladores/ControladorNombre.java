@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
@@ -33,7 +34,26 @@ public class ControladorNombre {
 		return new ModelAndView("mi-nombre",miNombre);
 	}
 	
+
+	@RequestMapping(path = "/saludar",  method = RequestMethod.GET)
+	public ModelAndView saludar(@RequestParam("nombre") String nombre, @RequestParam("apellido") String apellido){
 	
+	ModelMap model = new ModelMap();
+	List<Integer> numeros = new ArrayList<Integer>();
+	numeros.add(1);
+	numeros.add(2);
+	numeros.add(3);
+	numeros.add(4);
+	numeros.add(5);
+	
+	model.put("nombre", nombre);
+	model.put("apellido", apellido);
+	model.put("numeeros", value)
+		
+	return new ModelAndView("saludar", model);
+	
+	}
+
 
 	
 

@@ -10,17 +10,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
-public class Autor {
 
+@Entity
+public class Comuna {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
-	private String nacionalidad;
-	@OneToMany  (mappedBy="autor", cascade=CascadeType.ALL) //Al agregar cascade.all, guarda los datos en mabas tablas
-	private List<Libro> miLibro = new ArrayList<Libro>();
 	
+	@OneToMany  (mappedBy="comuna", cascade=CascadeType.ALL)
+	private List<Barrio> barrios = new ArrayList<Barrio>();
 	
 	public Long getId() {
 		return id;
@@ -34,16 +34,10 @@ public class Autor {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getNacionalidad() {
-		return nacionalidad;
+	public List<Barrio> getBarrios() {
+		return barrios;
 	}
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
-	public List<Libro> getMiLibro() {
-		return miLibro;
-	}
-	public void setMiLibro(List<Libro> miLibro) {
-		this.miLibro = miLibro;
+	public void setBarrios(List<Barrio> barrios) {
+		this.barrios = barrios;
 	}
 }

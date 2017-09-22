@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
 
-//Es un controlador
 @Controller
 public class ControladorLogin {
 
